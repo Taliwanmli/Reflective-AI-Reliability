@@ -48,7 +48,7 @@ How much do outputs vary across independent generations of the same model, promp
 - Which error types remain common in the combined condition?
 - When does calibrated language become unhelpful boilerplate?
 
-These analyses will be labelled exploratory unless their contrasts and error controls are frozen before the main run.
+Category and style analyses will be labelled exploratory unless their contrasts and error controls are frozen before the relevant stage. Cross-model questions are conditional Stage B analyses because Stage A uses one primary model.
 
 ## Outcome mapping
 
@@ -60,7 +60,9 @@ These analyses will be labelled exploratory unless their contrasts and error con
 | RQ4 | Robustness to paraphrasing; score dispersion; contradiction count | Paraphrase set |
 | RQ5 | Consistency; score dispersion; contradiction count | Repeat set |
 
-Score directions and anchors are defined in the [evaluation rubric](evaluation-rubric.md). A composite outcome, if used, must be specified before main-study outcome inspection and reported alongside its component dimensions.
+Score directions and anchors are defined in the [evaluation rubric](evaluation-rubric.md). A composite outcome, if used, must be specified before outcome inspection in the relevant stage and reported alongside its component dimensions. The full rubric is applied in Stage A; any Stage B stratified sampling of detailed secondary dimensions must be pre-specified and cannot be presented as complete-dataset annotation.
+
+Stage A also has pre-specified feasibility questions rather than efficacy hypotheses: manipulation distinctness, scenario ambiguity, paraphrase equivalence, rubric consistency, annotation time, operational and financial feasibility, and suitability of the statistical plan. These checks determine whether and how Stage B proceeds. If they prompt material protocol changes, pilot observations will not be pooled into later confirmatory estimates.
 
 ## Hypothesis-free integrity checks
 

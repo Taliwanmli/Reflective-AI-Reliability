@@ -5,7 +5,7 @@
 **Investigator:** Shiwen Tian, Computer Science undergraduate, Department of Informatics, King's College London<br>
 **Protocol version:** 0.1 draft
 
-This document describes a proposed undergraduate research project. It is not a registration, ethics approval, publication, peer-reviewed protocol, or statement of endorsement by King's College London or OpenAI.
+This document describes a proposed independent undergraduate research project. It is not a registration, ethics approval, publication, peer-reviewed protocol, supervised project, course or dissertation submission, or statement of endorsement by King's College London, OpenAI, or any other organisation.
 
 ## 1. Research problem
 
@@ -49,9 +49,14 @@ The proposed benchmark is a blocked, repeated-measures comparison. Every eligibl
 
 Condition definitions are in [experimental conditions](experimental-conditions.md). Each text therefore acts as its own comparison block. Model and generation repeat will be recorded rather than pooled invisibly.
 
-### 4.2 Synthetic benchmark
+### 4.2 Staged synthetic benchmark
 
-The target is approximately 120 base scenarios, provisionally balanced across eight categories (about 15 per category):
+The study begins with a bounded pilot and expands only if that pilot supports a larger design:
+
+- **Stage A — pilot:** approximately 30 base scenarios, three surface variants per scenario, four prompt conditions, one primary OpenAI API model, and two independent generations per cell. The pilot therefore contains 90 inputs and 720 planned primary model requests before retries.
+- **Stage B — conditional expansion:** approximately 60–120 base scenarios. The final target will depend on pilot findings, annotation burden, available time and funding, methodological review, data quality, and the frozen statistical plan. Additional models, if feasible, will be introduced as staged exploratory comparisons rather than silently enlarging the primary design.
+
+The scenario pool is provisionally balanced across eight categories:
 
 - university and study pressures;
 - career choices;
@@ -62,7 +67,7 @@ The target is approximately 120 base scenarios, provisionally balanced across ei
 - confidence and motivation; and
 - everyday non-clinical stress.
 
-The exact count and balance will be frozen before the main run. All scenarios will be fictional, non-identifiable, non-clinical first-person reflections. The small file in `data/` demonstrates the record format only; it is not the completed benchmark.
+The exact count and balance will be frozen before each stage. All scenarios will be fictional, non-identifiable, non-clinical first-person reflections. The small file in `data/` demonstrates the record format only; it is not the completed benchmark.
 
 ### 4.3 Construction process
 
@@ -78,7 +83,7 @@ No private diary entry, user message, product prompt, or production data may be 
 
 ### 4.4 Paraphrase generation
 
-Each base scenario is planned to have two semantically equivalent paraphrases, giving three surface variants per semantic group. This count is provisional and will be fixed before data collection.
+Each base scenario is planned to have two semantically equivalent paraphrases, giving three surface variants per semantic group. Stage A uses this count to test whether the equivalence review is workable; Stage B retains it only if the pilot supports it.
 
 Paraphrases will vary features such as sentence order, register, directness, punctuation, brevity, and everyday wording while preserving:
 
@@ -96,7 +101,7 @@ All conditions share the same task framing, input placeholder, length target, an
 
 ### 4.6 Models and repeated generations
 
-Publicly available OpenAI API models may be compared, subject to access, budget, and protocol review. Exact model snapshots or dated identifiers will be selected before the main run. The study will not silently substitute a newer model under the same label.
+Stage A uses one primary publicly available OpenAI API model, subject to access, budget, and protocol review. Its exact snapshot or dated identifier will be selected before the pilot run. Additional models are conditional, staged exploratory comparisons in Stage B. The study will not silently substitute a newer model under the same label.
 
 For each model, every reflection variant and condition will receive a pre-specified number of independent generations. A fresh request context will be used for each generation. The following will be frozen and recorded:
 
@@ -108,9 +113,23 @@ For each model, every reflection variant and condition will receive a pre-specif
 - request status and any retry reason; and
 - provider-returned identifiers that are appropriate to retain.
 
-The number of models and repeats remains to be determined. The [API budget](api-budget.md) shows the request formula and spending gates. Running this repository currently makes no API request.
+Stage A fixes two generations per model-condition-input cell. Any Stage B repeat count will be justified from pilot variability, precision, feasibility, and the frozen analysis plan. The [API budget](api-budget.md) shows the request formula and spending gates. Running this repository currently makes no API request.
 
-### 4.7 Assignment and execution order
+### 4.7 Pilot decision criteria
+
+Stage A is a methodological and feasibility pilot. It will assess:
+
+- whether the four prompt manipulations are detectably distinct while the shared task remains comparable;
+- whether scenarios preserve intended ambiguity without making preferred interpretations obvious;
+- whether paraphrases remain semantically equivalent;
+- whether rubric dimensions can be applied consistently without unacceptable overlap;
+- annotation time and the feasible depth of annotation;
+- financial and operational feasibility, including request failures and token use; and
+- whether the planned ordinal, paired, and dependence-aware statistical methods are appropriate for the observed data structure.
+
+Decision thresholds and the person making the decision will be recorded before pilot outcomes are inspected. If the prompts, benchmark construction, rubric, primary outcomes, or statistical plan change materially after Stage A, the pilot will remain a separate dataset and will not be pooled into a later confirmatory analysis.
+
+### 4.8 Assignment and execution order
 
 Requests will be generated from a manifest created before inference. Execution order will be randomised within blocks to reduce time-of-run and transient-service confounding. Retries will follow a written rule and will not replace an undesirable but technically valid response. Failed requests will remain visible in the run manifest.
 
@@ -134,7 +153,9 @@ The investigator will apply the versioned [evaluation rubric](evaluation-rubric.
 3. Present responses without condition labels and, where practical, without model labels.
 4. Annotate each response independently of its siblings before performing set-level comparisons.
 5. Record a score, short rationale, cited response span where applicable, confidence flag, and adjudication note.
-6. Re-annotate a random subset after a washout interval to estimate intra-rater stability.
+6. Re-annotate a pre-specified random subset after a washout interval to estimate intra-rater stability.
+
+All Stage A responses receive the full rubric. For Stage B, the primary response-level outcomes will be annotated for the complete dataset where feasible. Detailed secondary dimensions may instead be applied to a pre-specified stratified sample if the pilot shows that full annotation is not credible within the available time. Set-level dimensions will use the linked records needed for the relevant primary comparisons.
 
 A second human annotator has not been confirmed. If one becomes available, the sampling fraction, training procedure, agreement statistic, and adjudication process will be specified before joint annotation. The repository will not imply inter-rater reliability unless it is actually measured.
 
@@ -148,19 +169,19 @@ Automated or model-based judging is not part of the initial tooling. If later ad
 
 ## 6. Planned analysis
 
-The final analysis plan will be frozen before inspecting main-study outcomes. The current proposal includes:
+The Stage A analysis criteria will be frozen before pilot outcomes are inspected, and any later confirmatory plan will be frozen before Stage B outcomes are inspected. The current proposal includes:
 
 - score distributions, missingness, and floor or ceiling effects by condition and model;
 - paired condition contrasts within the same reflection variant;
 - effect sizes with uncertainty intervals, not significance labels alone;
 - ordinal or otherwise scale-appropriate models with semantic scenario treated as a repeated grouping factor;
-- condition-by-model interaction estimates, labelled exploratory unless powered and pre-specified;
+- condition-by-model interaction estimates only if additional models are run, labelled exploratory unless powered and pre-specified;
 - within-group dispersion across repeated generations;
 - within-group dispersion and substantive disagreement across paraphrases;
 - sensitivity analyses excluding ambiguous or protocol-deviating records; and
 - qualitative error analysis of unsupported claims, overreach, directives, and useful calibrated responses.
 
-The project will define any composite reliability outcome, score reversals, weighting, multiplicity correction, exclusion rule, and minimum practically relevant effect before the main analysis. If sample size or model assumptions do not support the proposed inferential model, the fallback will emphasise paired descriptive estimates and resampling intervals, with the change documented as a deviation.
+The project will define any composite reliability outcome, score reversals, weighting, multiplicity correction, exclusion rule, and minimum practically relevant effect before the relevant analysis freeze. Because rubric scores are ordinal rather than continuous, methods will not assume equal scale intervals without an explicit sensitivity analysis. If sample size, dependence, or model assumptions do not support the proposed inferential model, the fallback will emphasise paired descriptive estimates and resampling intervals, with the change documented as a deviation.
 
 ## 7. Expected outputs
 
@@ -177,11 +198,11 @@ None of these outputs is represented as complete in the current repository.
 
 ## 8. Threats to validity
 
-Key threats include construct validity of the rubric, investigator expectancy, limited scenario realism, imperfect paraphrase equivalence, prompt-format confounding, model updates, stochastic variability, dependence among variants, multiple comparisons, and limited generalisability beyond the chosen models and non-clinical synthetic scenarios. These are expanded in [limitations](limitations.md).
+Key threats include construct validity of the rubric, investigator expectancy, annotation capacity, limited scenario realism, imperfect paraphrase equivalence, prompt length and format confounding, compression caused by the common safety baseline, hosted-model changes, stochastic variability, dependence among variants and repeats, ordinal outcomes, multiple comparisons, and limited generalisability beyond the chosen model and non-clinical synthetic scenarios. These are expanded in [limitations](limitations.md).
 
 ## 9. Reproducibility and deviations
 
-The [reproducibility plan](reproducibility-plan.md) defines versioning, hashes, manifests, provenance, and release stages. Any change after protocol freeze will be logged with a date, rationale, affected artefacts, and whether outcomes had been inspected. Confirmatory and exploratory analyses will remain distinguishable.
+The [reproducibility plan](reproducibility-plan.md) defines versioning, hashes, manifests, provenance, and release stages. Any change after a stage freeze will be logged with a date, rationale, affected artefacts, and whether outcomes had been inspected. Pilot, confirmatory, and exploratory analyses will remain distinguishable. The rationale for the design is connected to primary literature in [related work](related-work.md).
 
 ## 10. Ethical and data-governance boundaries
 

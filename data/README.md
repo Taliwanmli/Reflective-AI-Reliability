@@ -21,9 +21,9 @@ Each line is one UTF-8 JSON object with:
 
 The authoritative machine-readable contract is `schemas/reflection.schema.json`. The offline validator also performs duplicate-ID and required-flag checks.
 
-## Planned benchmark
+## Planned stages
 
-The target is approximately 120 base semantic scenarios across eight categories, with a provisional total of three surface variants per scenario (one base and two paraphrases). Exact counts will be frozen before the main run. The sample file contains base seeds only; paraphrase construction is future work.
+Stage A is a pilot of approximately 30 base semantic scenarios across eight categories, with three surface variants per scenario (one base and two paraphrases). Stage B may expand to approximately 60–120 base scenarios only if pilot quality, annotation burden, time, funding, review, and the statistical plan support it. Exact counts and balance will be frozen before each stage. The sample file contains format examples only; paraphrase construction is future work.
 
 ## Authoring rules
 

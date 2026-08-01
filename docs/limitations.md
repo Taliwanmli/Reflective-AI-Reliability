@@ -28,7 +28,7 @@ Annotation scales are ordinal. Treating intervals as equal without sensitivity a
 
 Model behaviour can change with snapshots, routing, safety systems, service updates, and undocumented platform components. A result tied only to a marketing model name may not reproduce later. Exact available identifiers, dates, parameters, and response metadata should be recorded, but provider-side behaviour may still be only partly observable.
 
-The study may compare a small set of publicly available OpenAI API models. Findings would not automatically generalise to other providers, local models, future versions, conversational sessions, tools, retrieval systems, or production applications.
+Stage A uses one primary publicly available OpenAI API model. Any additional models are conditional exploratory comparisons. Findings would not automatically generalise to other providers, local models, future versions, conversational sessions, tools, retrieval systems, or production applications.
 
 ## Experimental validity
 
@@ -40,7 +40,9 @@ Repeated requests may experience time-of-day or transient-service effects. Rando
 
 Reflection variants from the same semantic group are dependent. Repeated generations are also nested within a model, condition, and input. Analyses that treat all outputs as independent would underestimate uncertainty.
 
-Nine dimensions, four conditions, multiple models, categories, and interactions create multiplicity. Confirmatory contrasts, score direction, exclusions, and any composite must be frozen before main outcome inspection. Small category cells may not support stable subgroup conclusions.
+Nine dimensions, four conditions, categories, and possible exploratory model comparisons create multiplicity. Confirmatory contrasts, score direction, exclusions, and any composite must be frozen before outcome inspection in the relevant stage. A 30-scenario pilot and small category cells may not support stable inferential or subgroup conclusions; feasibility estimates and paired descriptive summaries may be more appropriate.
+
+Annotation capacity constrains credible scope. The pilot can receive full annotation, but a 60–120-scenario Stage B may require complete coverage only for primary outcomes and a pre-specified stratified sample for detailed secondary dimensions. Such sampling reduces precision and limits claims about unannotated outcomes. Intra-rater checks do not establish inter-rater reliability, and no such claim is warranted unless a second annotator actually contributes independent ratings.
 
 Missing or refused responses may be informative rather than random. Reporting only valid generations could bias comparisons, so failure types and retry rules must be included.
 

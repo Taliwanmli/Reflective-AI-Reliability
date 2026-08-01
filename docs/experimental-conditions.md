@@ -85,9 +85,9 @@ No condition may contain hidden product context, personal history, prior convers
 
 Every eligible reflection variant is planned to appear in every condition. Requests will be randomised within a manifest while retaining identifiers that support paired analysis. A fresh context will be used for each request so that one condition cannot influence another.
 
-## Pre-run manipulation check
+## Pilot manipulation check
 
-Before the main run, an independent prompt review should confirm that:
+Before Stage A, a prompt review should confirm that:
 
 1. C1 and C3 contain the same evidence-grounding block.
 2. C2 and C3 contain the same uncertainty-calibration block.
@@ -95,7 +95,7 @@ Before the main run, an independent prompt review should confirm that:
 4. Output length and format are constant.
 5. No condition names or expected outcomes are shown to the model.
 
-A small pilot may test whether the manipulations are detectable without using pilot responses as confirmatory results. Any prompt revision after viewing pilot outputs will be versioned and the pilot will remain excluded from the main analysis.
+The 30-scenario Stage A pilot tests whether the manipulations are detectably distinct without treating pilot responses as confirmatory evidence after a material design change. Any prompt revision after viewing pilot outputs will be versioned; the affected pilot data remain separate from later confirmatory analysis.
 
 ## Known design tension
 

@@ -10,7 +10,7 @@ url: "https://github.com/Taliwanmli/Reflective-AI-Reliability"
 license: MIT
 version: 0.1.0-draft
 abstract: >-
-  A protocol-first research scaffold for a proposed undergraduate study of
+  A protocol-first research scaffold for a proposed independent undergraduate research project on
   evidence grounding, uncertainty calibration, and paraphrase robustness in
   language-model responses to synthetic, non-clinical personal reflections.
 keywords:

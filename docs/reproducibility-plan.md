@@ -12,7 +12,7 @@ The study will use explicit stages:
 
 1. **Protocol draft:** questions, dimensions, and boundaries remain editable.
 2. **Pilot freeze:** pilot dataset, prompt versions, and rubric version are tagged.
-3. **Main-run freeze:** benchmark, exclusions, models, repeats, parameters, and analysis plan are locked before main outcomes are inspected.
+3. **Stage B decision and freeze:** the decision to expand, benchmark count, exclusions, primary model, repeats, parameters, annotation coverage, and analysis plan are locked before Stage B outcomes are inspected.
 4. **Analysis release:** deviations, results, annotations, and environment information are released together where permitted.
 
 Each freeze should use a signed or otherwise identifiable Git tag if the maintainer's workflow supports it. No tag will imply publication or peer review.
@@ -33,7 +33,7 @@ Identifiers must not encode names, emails, or private source paths.
 
 ## Versioned artefacts
 
-The main-run manifest will reference cryptographic hashes for:
+Each stage manifest will reference cryptographic hashes for:
 
 - canonical JSONL input;
 - JSON Schemas;
@@ -81,11 +81,11 @@ Annotation releases should include:
 - original and adjudicated values; and
 - timestamps or batches sufficient to reconstruct the process without publishing personal information.
 
-Calibration items must be distinguishable from main-study items. If a rubric change requires re-annotation, mixed versions should not be pooled silently.
+Technical checks, Stage A pilot items, and any Stage B items must be distinguishable. All pilot responses receive the full rubric. In Stage B, complete primary-outcome annotation is preferred where feasible; any stratified sampling of detailed secondary dimensions must be specified and recorded before inspection. If a rubric change requires re-annotation, mixed versions should not be pooled silently.
 
 ## Analysis reproducibility
 
-Before the main run, the analysis plan should define:
+Before each relevant stage, the analysis plan should define:
 
 - primary contrasts and outcomes;
 - response- and set-level units;
@@ -98,9 +98,11 @@ Before the main run, the analysis plan should define:
 
 Generated tables and figures should be buildable from versioned machine-readable inputs. Manual changes to reported values are not permitted.
 
+Stage A and Stage B records will carry explicit stage identifiers. If pilot inspection causes a material change to the protocol, prompts, rubric, outcomes, or analysis, Stage A will remain separate from confirmatory Stage B estimates. Additional-model analyses will have separate manifests and be labelled exploratory unless they were prospectively incorporated into an adequately supported plan.
+
 ## Environment capture
 
-The validator uses the Python standard library. Future analysis or inference environments should record runtime and dependency versions using an appropriate lock file and include a minimal reproduction command. Hosted API behaviour outside the investigator's control will be described as such.
+The validator uses the Python standard library. Continuous integration tests Python 3.11 and 3.12 and uses a pinned validation tool for `CITATION.cff`. Future analysis or inference environments should record runtime and dependency versions using an appropriate lock file and include a minimal reproduction command. Hosted API behaviour outside the investigator's control will be described as such; exact model identifiers, access dates, parameters, and returned metadata reduce ambiguity but cannot guarantee future behavioural equivalence.
 
 ## Release checklist
 
