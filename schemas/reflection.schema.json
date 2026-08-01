@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Taliwanmli/Reflective-AI-Reliability/raw/main/schemas/reflection.schema.json",
+  "title": "Synthetic reflection record",
+  "description": "One fictional, non-identifiable, non-clinical reflection surface form.",
+  "type": "object",
+  "required": [
+    "reflection_id",
+    "category",
+    "text",
+    "synthetic",
+    "contains_personal_data",
+    "clinical_content",
+    "paraphrase_group",
+    "notes"
+  ],
+  "properties": {
+    "reflection_id": {
+      "type": "string",
+      "pattern": "^syn-[0-9]{3}(?:-p[0-9]{2})?$",
+      "description": "Stable identifier for one surface form."
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "university_and_study_pressures",
+        "career_choices",
+        "interpersonal_uncertainty",
+        "habits_and_personal_goals",
+        "ordinary_achievements_and_setbacks",
+        "time_management",
+        "confidence_and_motivation",
+        "everyday_non_clinical_stress"
+      ]
+    },
+    "text": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 2000
+    },
+    "synthetic": {
+      "const": true
+    },
+    "contains_personal_data": {
+      "const": false
+    },
+    "clinical_content": {
+      "const": false
+    },
+    "paraphrase_group": {
+      "type": "string",
+      "pattern": "^pg-[0-9]{3}$"
+    },
+    "notes": {
+      "type": "string",
+      "maxLength": 500
+    }
+  },
+  "additionalProperties": false
+}

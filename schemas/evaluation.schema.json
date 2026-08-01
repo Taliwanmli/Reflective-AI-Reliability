@@ -1,0 +1,161 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Taliwanmli/Reflective-AI-Reliability/raw/main/schemas/evaluation.schema.json",
+  "title": "Reflective AI evaluation record",
+  "description": "A draft contract for one response-level or set-level annotation. It contains no study results.",
+  "type": "object",
+  "required": [
+    "evaluation_id",
+    "unit_type",
+    "reflection_ids",
+    "response_ids",
+    "condition",
+    "model",
+    "rubric_version",
+    "annotator_id",
+    "scores",
+    "ambiguity_flag",
+    "notes"
+  ],
+  "properties": {
+    "evaluation_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "unit_type": {
+      "type": "string",
+      "enum": ["response", "repeat_set", "paraphrase_set"]
+    },
+    "reflection_ids": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "response_ids": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "condition": {
+      "type": "string",
+      "enum": [
+        "neutral_baseline",
+        "evidence_grounded",
+        "uncertainty_calibrated",
+        "combined"
+      ]
+    },
+    "model": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Exact model identifier used for generation."
+    },
+    "rubric_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "annotator_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Non-personal annotator identifier or role."
+    },
+    "scores": {
+      "type": "object",
+      "properties": {
+        "source_grounding": { "$ref": "#/$defs/rating" },
+        "unsupported_inference": { "$ref": "#/$defs/rating" },
+        "uncertainty_calibration": { "$ref": "#/$defs/rating" },
+        "directive_intensity": { "$ref": "#/$defs/rating" },
+        "emotional_psychological_overreach": { "$ref": "#/$defs/rating" },
+        "consistency": { "$ref": "#/$defs/rating" },
+        "paraphrase_robustness": { "$ref": "#/$defs/rating" },
+        "practical_usefulness": { "$ref": "#/$defs/rating" },
+        "transparency_about_limitations": { "$ref": "#/$defs/rating" }
+      },
+      "additionalProperties": false
+    },
+    "ambiguity_flag": {
+      "type": "boolean"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": { "unit_type": { "const": "response" } },
+        "required": ["unit_type"]
+      },
+      "then": {
+        "properties": {
+          "reflection_ids": { "maxItems": 1 },
+          "response_ids": { "maxItems": 1 },
+          "scores": {
+            "required": [
+              "source_grounding",
+              "unsupported_inference",
+              "uncertainty_calibration",
+              "directive_intensity",
+              "emotional_psychological_overreach",
+              "practical_usefulness",
+              "transparency_about_limitations"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": { "unit_type": { "const": "repeat_set" } },
+        "required": ["unit_type"]
+      },
+      "then": {
+        "properties": {
+          "scores": { "required": ["consistency"] }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": { "unit_type": { "const": "paraphrase_set" } },
+        "required": ["unit_type"]
+      },
+      "then": {
+        "properties": {
+          "scores": { "required": ["paraphrase_robustness"] }
+        }
+      }
+    }
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "rating": {
+      "type": "object",
+      "required": ["score", "rationale", "evidence_spans"],
+      "properties": {
+        "score": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 4
+        },
+        "rationale": {
+          "type": "string",
+          "minLength": 1
+        },
+        "evidence_spans": {
+          "type": "array",
+          "items": { "type": "string" },
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}
