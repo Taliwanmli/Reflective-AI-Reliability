@@ -1,6 +1,6 @@
 # Draft experimental prompt templates
 
-These four files are model-neutral research materials for the proposed benchmark. They are not production InnerMap prompts and are not copied from the private product repository.
+These four files are model-neutral research materials for the proposed benchmark. They are not production application prompts and are not copied from the private product repository.
 
 ## Conditions
 

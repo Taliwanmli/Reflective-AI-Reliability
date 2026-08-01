@@ -1,6 +1,6 @@
 # Experimental conditions
 
-**Status:** Draft experimental materials. These conditions are model-neutral and are not production InnerMap prompts.
+**Status:** Draft experimental materials. These conditions are model-neutral and are not production application prompts.
 
 ## Design principle
 
