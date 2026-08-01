@@ -2,7 +2,7 @@
 
 A protocol-first research scaffold for studying the reliability of language-model responses to synthetic, non-clinical personal reflections.
 
-> **Status: Protocol development**  
+> **Status: Protocol development**<br>
 > **No study results are reported yet.** The design, materials, and analysis plan remain subject to review and revision.
 
 ## Motivation
@@ -74,7 +74,7 @@ Citation metadata is provided in [CITATION.cff](CITATION.cff). Until a versioned
 
 ## Author
 
-**Shiwen Tian**  
+**Shiwen Tian**<br>
 Computer Science undergraduate, Department of Informatics, King's College London
 
 - [GitHub profile](https://github.com/Taliwanmli)

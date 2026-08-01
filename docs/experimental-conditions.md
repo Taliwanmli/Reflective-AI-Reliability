@@ -36,7 +36,7 @@ Adds instructions to:
 - avoid introducing events, emotions, motives, patterns, or traits not supported by the text; and
 - keep any interpretation traceable to the relevant input evidence.
 
-**Manipulated construct:** Evidence grounding.  
+**Manipulated construct:** Evidence grounding.<br>
 **Not intentionally manipulated:** Degree of hedging or confidence language beyond what follows from source discipline.
 
 ### C2 — Uncertainty-calibrated
@@ -48,14 +48,14 @@ Adds instructions to:
 - acknowledge material ambiguity or insufficient information; and
 - avoid certainty, fixed labels, and directives when the reflection does not justify them.
 
-**Manipulated construct:** Uncertainty calibration.  
+**Manipulated construct:** Uncertainty calibration.<br>
 **Not intentionally manipulated:** Explicit claim-to-source tracing.
 
 ### C3 — Combined
 
 Adds both C1 and C2 intervention blocks without introducing a third task or extra content requirement.
 
-**Manipulated constructs:** Evidence grounding and uncertainty calibration.  
+**Manipulated constructs:** Evidence grounding and uncertainty calibration.<br>
 **Purpose:** Estimate joint effects and possible usefulness or verbosity trade-offs.
 
 ## Condition matrix

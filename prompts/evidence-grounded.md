@@ -1,6 +1,6 @@
 # C1 — Evidence-grounded
 
-**Version:** 0.1 draft  
+**Version:** 0.1 draft<br>
 **Material type:** Experimental research prompt; not a production prompt
 
 ## Instruction

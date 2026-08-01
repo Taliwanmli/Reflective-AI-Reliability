@@ -1,8 +1,8 @@
 # Draft research protocol
 
-**Working title:** Evidence-Grounded and Uncertainty-Calibrated AI for Personal Reflection  
-**Status:** Protocol development; no study results are reported  
-**Investigator:** Shiwen Tian, Computer Science undergraduate, Department of Informatics, King's College London  
+**Working title:** Evidence-Grounded and Uncertainty-Calibrated AI for Personal Reflection<br>
+**Status:** Protocol development; no study results are reported<br>
+**Investigator:** Shiwen Tian, Computer Science undergraduate, Department of Informatics, King's College London<br>
 **Protocol version:** 0.1 draft
 
 This document describes a proposed undergraduate research project. It is not a registration, ethics approval, publication, peer-reviewed protocol, or statement of endorsement by King's College London or OpenAI.

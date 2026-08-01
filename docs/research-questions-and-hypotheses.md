@@ -12,21 +12,21 @@ For this study, **evidence grounding** means that substantive claims can be trac
 
 How does an explicit evidence-grounding instruction change source grounding, unsupported inference, and emotional or psychological overreach relative to a neutral baseline?
 
-**H1a:** Evidence-grounded and combined conditions will receive higher source-grounding scores than the neutral baseline.  
+**H1a:** Evidence-grounded and combined conditions will receive higher source-grounding scores than the neutral baseline.<br>
 **H1b:** Evidence-grounded and combined conditions will receive lower unsupported-inference and overreach risk scores than the neutral baseline.
 
 ### RQ2: Uncertainty calibration
 
 How does an explicit uncertainty-calibration cue change uncertainty calibration, directive intensity, and transparency about limitations?
 
-**H2a:** Uncertainty-calibrated and combined conditions will receive higher uncertainty-calibration scores than the neutral baseline.  
+**H2a:** Uncertainty-calibrated and combined conditions will receive higher uncertainty-calibration scores than the neutral baseline.<br>
 **H2b:** They will receive lower directive-intensity risk and higher limitation-transparency scores than the neutral baseline.
 
 ### RQ3: Combined intervention
 
 Does combining evidence grounding with uncertainty calibration provide an additive benefit, create a trade-off, or produce no material improvement beyond either intervention alone?
 
-**H3a:** The combined condition will show the strongest pre-specified reliability profile: higher grounding and calibration with lower unsupported inference and overreach.  
+**H3a:** The combined condition will show the strongest pre-specified reliability profile: higher grounding and calibration with lower unsupported inference and overreach.<br>
 **H3b:** Any gain may be accompanied by lower practical-usefulness ratings if responses become excessively hedged or formulaic; this trade-off will be estimated rather than assumed away.
 
 ### RQ4: Phrasing robustness

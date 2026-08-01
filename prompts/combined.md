@@ -1,6 +1,6 @@
 # C3 — Combined evidence-grounded and uncertainty-calibrated
 
-**Version:** 0.1 draft  
+**Version:** 0.1 draft<br>
 **Material type:** Experimental research prompt; not a production prompt
 
 ## Instruction
