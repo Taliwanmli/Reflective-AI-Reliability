@@ -1,0 +1,13 @@
+[project]
+name = "reflective-ai-reliability"
+version = "0.1.0"
+description = "Offline validation tools for a proposed independent undergraduate reflective-AI research project"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "Shiwen Tian" }]
+dependencies = []
+
+[tool.unittest]
+start-directory = "tests"
+pattern = "test_*.py"
