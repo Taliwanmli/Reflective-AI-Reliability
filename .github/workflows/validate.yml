@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - research-scaffold
   pull_request:
     branches:
       - main
