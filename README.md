@@ -103,6 +103,6 @@ python3 -m json.tool schemas/evaluation.schema.json >/dev/null
 python3 -c "import tomllib; tomllib.load(open('pyproject.toml', 'rb'))"
 ```
 
-The GitHub Actions validation workflow runs the same checks on both supported Python versions and validates `CITATION.cff` with the pinned `cffconvert` dependency. These checks establish file syntax, schema flags, and validator behaviour only; they cannot establish methodological validity, fictionality, non-identifiability, semantic equivalence, or research quality. The workflow uses no secrets and makes no model or paid API call. No status badge is shown until a successful workflow run has been observed.
+The GitHub Actions validation workflow runs the same checks on both supported Python versions and validates `CITATION.cff` with the pinned `cffconvert` dependency. These checks establish file syntax, schema flags, and validator behaviour only; they cannot establish methodological validity, fictionality, non-identifiability, semantic equivalence, or research quality. The workflow uses no secrets and makes no model or paid API call.
 
 Contributions are welcome under the privacy and scope rules in [CONTRIBUTING.md](CONTRIBUTING.md).
